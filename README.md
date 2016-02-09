@@ -45,7 +45,7 @@ This will return a map contaning the Key and the Value selected, for example:
 <img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/1.png"></img>
 
 
-If there are a different set of key and value names in the list, then those can be specified, in the next example the the "Key" key is replaced with "Id" and "Value" value with Name.
+If there are a different set of key and value names in the list, then those can be specified, in the next example the "Key" key is replaced with "Id" and "Value" value with Name.
 
 Example:
 
