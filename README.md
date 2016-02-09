@@ -28,7 +28,7 @@ List<Map<int, String>> getLanguages(){
 }
 
 void main(){
-  var languages = getLanguages();
+    var languages = getLanguages();
 
     Map pResult = await QuickDialogs.pickList(languages, "Languages List");
     print(pResult);
