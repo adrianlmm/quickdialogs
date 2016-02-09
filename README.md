@@ -146,3 +146,33 @@ And the response should be something like:
 [{"Key":"3","Value":"Java (Static, Managed)"},{"Key":"9","Value":"Javascript (Dinamyc, Interpreted)"}]
 ```
 
+##showModal (Experimental)
+This is experimental, it will take the id of a DIV element and show it in a modal window, the DIV must have a child div with the name of the parent div plus the string "-body"
+
+Example:
+
+```html
+<div id="mdlData" style="display:none;">
+    <div id="mdlData-body" style="width: 500px;">
+          <div>
+            <h1>This will appear in a modal window</h1>
+          </div>
+          <div>
+              <button id="mdlData-close1">Cancel</button>&nsp;<button id="btnOK">OK</button>
+          </div>
+        </div>
+    </div>
+</div>
+```
+
+Dart code:
+
+```dart
+QuickDialogs.showModal("mdlData");
+```
+
+To close the dialog use the closeModal function:
+
+```dart
+QuickDialogs.closeModal("mdlData");
+```
