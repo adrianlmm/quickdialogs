@@ -36,7 +36,7 @@ void main(){
 }
 
 ```
-This will return a map contaning the Key and Value selected, for example:
+This will return a map contaning the Key and the Value selected, for example:
 
 ```dart
 {Key: 2, Value: Dart (Interpreted)}
