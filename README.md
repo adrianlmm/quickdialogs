@@ -42,6 +42,9 @@ This will return a map contaning the Key and Value selected, for example:
 {Key: 2, Value: Dart (Interpreted)}
 ```
 
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/1.png"></img>
+
+
 If there are a different set of key and value names in the list, then those can be specified, in the next example the the "Key" key is replaced with "Id" and "Value" value with Name.
 
 Example:
@@ -83,6 +86,8 @@ Example:
 Map pResult = await QuickDialogs.pickList(languages, "Languages List", AKey : "Id", AValue : "Name", AMark: "Java");
 ```
 
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/2.png"></img>
+
 ##multiPickList
 Same as pick list, but you can select more than one value, it will return a List of maps.
 
@@ -96,6 +101,9 @@ Example:
 List<Map> pResult = await QuickDialogs.multiPickList(languages, "Languages List, pick one or more", AKey: "Id", AValue: "Name", AMark: "Java");
     print(pResult);
 ```
+
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/3.png"></img>
+
 ##inputText
 A simple modal dialog to capture text or a password.
 
@@ -108,12 +116,16 @@ Example:
 var pResult = await QuickDialogs.inputText("", "Write a simple description");
 ```
 
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/4.png"></img>
+
 It can also show the input as password characters:
 
 Example:
 ```dart
 var pResult = await QuickDialogs.inputText("", "Input your password", Password : true);
 ```
+
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/5.png"></img>
 
 ##inputAutocomplete
 Ajax automplemete for HTML inputs.
@@ -128,6 +140,8 @@ String pUrl = "http://localhost:4567/programing_languages";
 QuickDialogs.inputAutocomplete(inpAutocomplete, pUrl, onSelect: (key, value) => print("key: $key, value: $value"));
 ```  
 
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/6.png"></img>
+
 The query in the results can also be marked or highlighted:
 
 Example:
@@ -135,6 +149,8 @@ Example:
 String pUrl = "http://localhost:4567/programing_languages";
 QuickDialogs.inputAutocomplete(inpAutocomplete, pUrl, Mark: true, onSelect: (key, value) => print("key: $key, value: $value"));
 ```  
+
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/7.png"></img>
 
 The REST service signature must have the "query" param in the query string, the result is a JSON array with Key and Value pairs, for example:
 ```dart
@@ -170,6 +186,8 @@ Dart code:
 ```dart
 QuickDialogs.showModal("mdlData");
 ```
+
+<img src="https://raw.githubusercontent.com/adrianlmm/quickdialogs/master/resources/pics/8.png"></img>
 
 To close the dialog use the closeModal function:
 
