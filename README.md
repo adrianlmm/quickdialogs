@@ -9,8 +9,7 @@ Functions:
 A modal pick list that show items based in a List.
 
 ```dart
-Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""}){
-
+Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""})
 ```
 Example:
 
@@ -74,4 +73,20 @@ This will return something like:
 
 ```dart
 {Id: 2, Name: Dart (Interpreted)}
+```
+
+It can also show some parts of the values highlighted or marked, for example, to highlight in the list the word Java.
+
+Example:
+
+```dart
+Map pResult = await QuickDialogs.pickList(languages, "Languages List", AKey : "Id", AValue : "Name", AMark: "Java");
+```
+
+##multiPickList
+Same as pick list, but you can select more than one value, it will return a List of maps.
+
+```dart
+Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""})
+
 ```
