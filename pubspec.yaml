@@ -1,0 +1,9 @@
+name: quickdialogs
+version: 1.0.0
+description: Quick HTML dialogs w/o having to write markup
+author: Adrián Avila <adrian.avila.mtz@gmail.com>
+homepage: https://github.com/adrianlmm/quickdialogs
+environment:
+  sdk: '>=1.8.0 <2.0.0'
+dependencies:
+  browser: any
