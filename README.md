@@ -1,7 +1,7 @@
 # quickdialogs
 Quick HTML dialogs w/o typing markup for Dart
 
-Quick dialogs was created to create HTML dialogs quickly w/o the need to create HTML markup or CSS stylesheets, it is designed to stay out the way, for that reason, they cannot be styled(yet), they are designed like that, useful for quick sketching web apps.
+Quick dialogs was designed to create HTML dialogs quickly w/o the need to create HTML markup or CSS stylesheets, it is designed to stay out the way, for that reason, they cannot be styled(yet), they are designed like that, useful for quick sketching web apps.
 
 Functions:
 
