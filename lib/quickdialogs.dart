@@ -308,7 +308,7 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
      
      DivElement divButtonContainer = new DivElement()..style.borderTopStyle = "solid"..style.borderColor = "black"..style.borderWidth = "1px";
      
-     ButtonElement btnOK = new Element.html("<button>Aceptar</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
+     ButtonElement btnOK = new Element.html("<button>OK</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
      btnOK.onClick.listen((_){
         
          DivElement divItem = querySelector(".selected");
@@ -320,7 +320,7 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
          fComplete(pMapResult);
      });
      
-     ButtonElement btnCancel = new Element.html("<button>Cancelar</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
+     ButtonElement btnCancel = new Element.html("<button>Cancel</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
      btnCancel.onClick.listen((_){
          fComplete(null);
      });
@@ -475,7 +475,7 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
      
      DivElement divButtonContainer = new DivElement()..style.borderTopStyle = "solid"..style.borderColor = "black"..style.borderWidth = "1px";
      
-     ButtonElement btnOK = new Element.html("<button>Aceptar</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
+     ButtonElement btnOK = new Element.html("<button>OK</buton")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
      btnOK.onClick.listen((_){
 
          var divItemList = querySelectorAll(".selected");
@@ -496,7 +496,7 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
         querySelector("#modalItemList").remove();
      });
      
-     ButtonElement btnCancelar = new Element.html("<button>Cancelar</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
+     ButtonElement btnCancelar = new Element.html("<button>Cancel</button")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
      btnCancelar.onClick.listen((_){
          pResult.complete(null);
          querySelector("#modalItemList").remove();
