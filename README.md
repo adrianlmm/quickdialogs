@@ -158,7 +158,7 @@ Example:
             <h1>This will appear in a modal window</h1>
           </div>
           <div>
-              <button id="mdlData-close1">Cancel</button>&nsp;<button id="btnOK">OK</button>
+              <button id="mdlData-close1">Cancel</button>&nbsp;<button id="btnOK">OK</button>
           </div>
         </div>
     </div>
