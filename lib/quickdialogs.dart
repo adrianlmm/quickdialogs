@@ -124,7 +124,7 @@ void showModal(String AContainer) {
     m1.style.margin = "0 auto";
     m1.style.marginTop  = "${mtop}px";
 
-    ButtonElement btnToolClose1 = querySelector("#${AContainer}-cerrar1");
+    ButtonElement btnToolClose1 = querySelector("#${AContainer}-close1");
 
     if (btnToolClose1 != null){
         btnToolClose1.onClick.isEmpty.then((_){
@@ -132,7 +132,7 @@ void showModal(String AContainer) {
         });
     }
     
-    ButtonElement btnToolClose2 = querySelector("#${AContainer}-cerrar2");
+    ButtonElement btnToolClose2 = querySelector("#${AContainer}-close2");
     if (btnToolClose2 != null){
         btnToolClose2.onClick.isEmpty.then((_){
             closeModal(AContainer);
@@ -140,7 +140,7 @@ void showModal(String AContainer) {
     }
 }
 
-Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""}){
+Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Key", String AValue : "Value", String AMark : ""}){
 
      Completer<Map<String, String>> pResult = new Completer<Map<dynamic, String>>();
      
@@ -341,7 +341,7 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
      return pResult.future;
 }
 
-Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> ALista, String ATitulo, {String AKey : "Id", String AValue : "Value", String AMark : ""}){
+Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""}){
     
     Completer<List<Map<String, String>>> pResult = new Completer<List<Map<String, String>>>();
     
@@ -352,7 +352,7 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
 
     mc.children.add(m1);
     
-    DivElement divItemTitle = _getTitleDiv(ATitulo);
+    DivElement divItemTitle = _getTitleDiv(ATitle);
     m1.children.add(divItemTitle);
     
     DivElement divItemContainer = new DivElement();
@@ -395,7 +395,7 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
      
     int i = 0;
      
-    for (Map<dynamic, String >item in ALista){
+    for (Map<dynamic, String >item in AList){
          
          DivElement divItem = new DivElement()
            ..style.paddingTop = "13px"
@@ -606,7 +606,7 @@ Future<String> inputText(String AText, String ATitle, {bool Password : false}){
 DateTime _Now = new DateTime.now();
 Map _Cache = new Map();
 
-void inputAutocomplete(InputElement AInputElement, String AUrl, String ACampoId, {bool Mark : false, onSelect(Akey, AValue) : null}){
+void inputAutocomplete(InputElement AInputElement, String AUrl, {bool Mark : false, onSelect(Akey, AValue) : null}){
 
 
     String pTexto = "";
