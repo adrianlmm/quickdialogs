@@ -115,3 +115,34 @@ Example:
 var pResult = await QuickDialogs.inputText("", "Input your password", Password : true);
 ```
 
+##inputAutocomplete
+Ajax automplemete for HTML inputs.
+
+```dart
+void inputAutocomplete(InputElement AInputElement, String AUrl, {bool Mark : false, onSelect(Akey, AValue) : null})
+```
+Example:
+
+```dart
+String pUrl = "http://localhost:4567/programing_languages";
+QuickDialogs.inputAutocomplete(inpAutocomplete, pUrl, onSelect: (key, value) => print("key: $key, value: $value"));
+```  
+
+The query in the results can also be marked or highlighted:
+
+Example:
+```dart
+String pUrl = "http://localhost:4567/programing_languages";
+QuickDialogs.inputAutocomplete(inpAutocomplete, pUrl, Mark: true, onSelect: (key, value) => print("key: $key, value: $value"));
+```  
+
+The REST service signature must have the "query" param in the query string, the result is a JSON array with Key and Value pairs, for example:
+```dart
+http://localhost:4567/programing_languages?query=java
+```
+And the response should be something like:
+
+```dart
+[{"Key":"3","Value":"Java (Static, Managed)"},{"Key":"9","Value":"Javascript (Dinamyc, Interpreted)"}]
+```
+
