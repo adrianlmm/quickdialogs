@@ -1,7 +1,7 @@
 # quickdialogs
 Quick HTML dialogs w/o typing markup for Dart
 
-Quick dialogs was created to create HTML dialogs quickly w/o the need to create HTML markup, it is designed to stay out the way, useful for quick sketching web apps.
+Quick dialogs was created to create HTML dialogs quickly w/o the need to create HTML markup or CSS stylesheets, it is designed to stay out the way, for that reason, they cannot be styled(yet), they are designed like that, useful for quick sketching web apps.
 
 Functions:
 
@@ -90,3 +90,28 @@ Same as pick list, but you can select more than one value, it will return a List
 Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""})
 
 ```
+Example:
+
+```dart
+List<Map> pResult = await QuickDialogs.multiPickList(languages, "Languages List, pick one or more", AKey: "Id", AValue: "Name", AMark: "Java");
+    print(pResult);
+```
+##inputText
+A simple modal dialog to capture text or a password.
+
+```dart
+Future<String> inputText(String AText, String ATitle, {bool Password : false})
+```
+
+Example:
+```dart
+var pResult = await QuickDialogs.inputText("", "Write a simple description");
+```
+
+It can also show the input as password characters:
+
+Example:
+```dart
+var pResult = await QuickDialogs.inputText("", "Input your password", Password : true);
+```
+
