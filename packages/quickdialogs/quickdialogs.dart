@@ -346,7 +346,7 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
   return pResult.future;
 }
 
-Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : ""}){
+Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Id", String AValue : "Value", String AMark : "", List<dynamic> ASelected}){
 
   Completer<List<Map<String, String>>> pResult = new Completer<List<Map<String, String>>>();
 
@@ -413,6 +413,17 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
       ..attributes["data-index"] = i.toString()
       ..style.height = "30px";
 
+      if (ASelected != null){
+
+        if (ASelected.contains(item[AKey])){
+
+          divItem.classes.add("selected");
+          divItem.style.background = "rgb(212, 220, 250)";
+
+        }
+
+      }
+
     i++;
 
     if (AMark == ""){
@@ -478,7 +489,33 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
 
   document.body.children.add(mc);
 
-  DivElement divButtonContainer = new DivElement()..style.borderTopStyle = "solid"..style.borderColor = "black"..style.borderWidth = "1px";
+  DivElement divButtonContainer = new DivElement()..style.borderTopStyle = "solid"..style.borderColor = "black"..style.borderWidth = "1px"..style.marginLeft = "5px";
+
+  ButtonElement btnSelectAll = new Element.html("<button>Select All</button")..style.float = "left"..style.marginTop = "20px"..style.marginRight = "5px";
+  btnSelectAll.onClick.listen((_){
+
+    for (DivElement element in divItemContainer.children){
+        if  (!element.classes.contains("selected")){
+          element.classes.add("selected");
+        }
+
+        element.style.background = "rgb(212, 220, 250)";
+    }
+
+  });
+
+  ButtonElement btnUnselectAll = new Element.html("<button>Unselect All</button")..style.float = "left"..style.marginTop = "20px"..style.marginRight = "5px";
+  btnUnselectAll.onClick.listen((_){
+
+    for (DivElement element in divItemContainer.children){
+      if  (element.classes.contains("selected")){
+        element.classes.remove("selected");
+      }
+
+      element.style.background = "white";
+    }
+
+  });
 
   ButtonElement btnOK = new Element.html("<button>OK</buton")..style.float = "right"..style.marginTop = "20px"..style.marginRight = "5px";
   btnOK.onClick.listen((_){
@@ -507,6 +544,8 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
     querySelector("#modalItemList").remove();
   });
 
+  divButtonContainer.children.add(btnSelectAll);
+  divButtonContainer.children.add(btnUnselectAll);
   divButtonContainer.children.add(btnOK);
   divButtonContainer.children.add(btnCancelar);
 
