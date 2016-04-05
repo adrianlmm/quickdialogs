@@ -614,7 +614,7 @@ Future<String> inputText(String AText, String ATitle, {bool Password : false}){
   inpText.style.paddingTop = "13px";
   inpText.style.marginTop  = "30px";
   inpText.style.marginLeft = "50px";
-  inpText.style.height     = "15px";
+  inpText.style.height     = "20px";
   inpText.style.padding    = "5px";
   inpText.style.width      = "300px";
   inpText.value = AText;
@@ -746,7 +746,7 @@ Future<TDialogResult> showDialog(String AText, String ATitle, TDialogType ADialo
   pDialogText.style.paddingTop = "13px";
   pDialogText.style.marginTop  = "10px";
   pDialogText.style.marginLeft = "10px";
-  pDialogText.style.height     = "15px";
+  pDialogText.style.height     = "20px";
   pDialogText.style.padding    = "5px";
   pDialogText.style.maxWidth   = "240px";
   pDialogText.style.float      = "left";
