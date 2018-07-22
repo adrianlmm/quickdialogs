@@ -120,7 +120,7 @@ void showModal(String AContainer) {
   var sh  = m1.scrollHeight / 2;
 
   var windowHeight = window.innerHeight;
-  var mtop = ((windowHeight / 2) - sh) - 25;
+  var mtop = (((windowHeight / 2) - sh) - 25).truncate();
 
   if (mtop < 0){
     mtop = 30;
@@ -469,16 +469,16 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
       var pTarget = event.target;
 
       while (pTarget is SpanElement){
-        pTarget = pTarget.parent;
+        pTarget = (pTarget as SpanElement).parent;
       }
 
-      pTarget.classes.toggle("selected");
+      (pTarget as SpanElement).classes.toggle("selected");
 
-      if (pTarget.classes.contains("selected")){
-        pTarget.style.background = "rgb(212, 220, 250)";
+      if ((pTarget as SpanElement).classes.contains("selected")){
+        (pTarget as SpanElement).style.background = "rgb(212, 220, 250)";
       }
       else{
-        pTarget.style.background = "white";
+        (pTarget as SpanElement).style.background = "white";
       }
 
     });
