@@ -145,7 +145,7 @@ void showModal(String AContainer) {
   }
 }
 
-Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Key", String AValue : "Value", String AMark : ""}){
+Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Key", String AValue : "Value", String AMark : "", dynamic ASelected}){
 
   Completer<Map<String, String>> pResult = new Completer<Map<dynamic, String>>();
 
@@ -242,6 +242,10 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
 
   int i = 0;
 
+  DivElement divItemTmp = null;
+  DivElement divItemFirst = null;
+  bool pFound = false;
+
   for (Map<dynamic, String >item in AList){
 
     DivElement divItem = new DivElement()
@@ -255,9 +259,29 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
       ..attributes["data-index"] = i.toString()
       ..style.height = "30px";
 
+
+
+    if (ASelected != null){
+
+        if (ASelected == item[AKey]){
+
+          divItem.classes.add("selected");
+          divItem.style.background = "rgb(212, 220, 250)";
+          divItemTmp = divItem;
+          pFound = true;
+
+        }
+
+    }
+    else{
+      if (i == 0){
+        divItem.style.background = "rgb(212, 220, 250)";
+        divItem.classes.add("selected");
+      }
+    }
+
     if (i == 0){
-      divItem.style.background = "rgb(212, 220, 250)";
-      divItem.classes.add("selected");
+      divItemFirst =divItem;
     }
 
     i++;
@@ -309,6 +333,11 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
 
   }
 
+  if (ASelected != null && !pFound){
+    divItemFirst.style.background = "rgb(212, 220, 250)";
+    divItemFirst.classes.add("selected");
+  }
+
   document.body.children.add(mc);
 
   DivElement divButtonContainer = new DivElement()..style.borderTopStyle = "solid"..style.borderColor = "black"..style.borderWidth = "1px";
@@ -342,7 +371,13 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
     mc.focus();
   }
 
-  divButtonContainer.scrollIntoView();
+  if (divItemTmp != null){
+    divItemTmp.scrollIntoView();
+    divItemTmp.focus();
+  }
+  else{
+    divButtonContainer.scrollIntoView();
+  }
   return pResult.future;
 }
 
