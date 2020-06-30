@@ -147,7 +147,7 @@ void showModal(String AContainer) {
 
 Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String ATitle, {String AKey : "Key", String AValue : "Value", String AMark : "", dynamic ASelected}){
 
-  Completer<Map<String, String>> pResult = new Completer<Map<dynamic, String>>();
+  Completer<Map<String, String>> pResult = new Completer<Map<String, String>>();
 
   DivElement mc = _getBackGroundDiv();
   mc.id = "modalItemList";
