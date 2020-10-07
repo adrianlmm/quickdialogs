@@ -246,7 +246,7 @@ Future<Map<String, String>> pickList(List<Map<dynamic, String>> AList, String AT
   DivElement divItemFirst = null;
   bool pFound = false;
 
-  for (Map<dynamic, String >item in AList){
+  for (var item in AList){
 
     DivElement divItem = new DivElement()
       ..style.paddingTop = "13px"
@@ -435,7 +435,7 @@ Future<List<Map<String, String>>> multiPickList(List<Map<dynamic, String>> AList
 
   int i = 0;
 
-  for (Map<dynamic, String >item in AList){
+  for (var item in AList){
 
     DivElement divItem = new DivElement()
       ..style.paddingTop = "13px"
